@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
+import { Modal, Button, Image, Col } from 'react-bootstrap';
 
 
 class MovieDetail extends Component {
@@ -31,6 +30,7 @@ class MovieDetail extends Component {
       Director,
       Writer,
       Actors,
+      Poster,
       imdbRating
     } = this.state.movieData;
 
@@ -43,7 +43,10 @@ class MovieDetail extends Component {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            <h2>{Title}</h2>
+            <Col>
+              <Image src={Poster} rounded />
+            </Col>
+            <h2><center>{Title}</center></h2>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
